@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance Charges Prediction</title>
+    <style>
+        body {
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-medical-insurance-flat-geometric-blue-banner-image_172498.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: rgba(177, 240, 253, 0.914);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 300px;
+            width: 100%;
+        }
+        .form-title {
+            text-align: center;
+        }
+        .form-wrapper {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Medical Insurance Charges Prediction</h1>
+        <form method="POST" action="/predict_charges" class="form-wrapper">
+            <label>Age:</label>
+            <input type="text" name="age">
+            <br><br>
+            <label>Gender:</label>
+            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br><br>
+            <label>BMI:</label>
+            <input type="text" name="bmi">
+            <br><br>
+            <label>Children:</label>
+            <input type="text" name="children">
+            <br><br>
+            <label>Smoker:</label>
+            <label>Yes:</label> <input type="radio" name="smoker" value="yes">
+            <label>No:</label> <input type="radio" name="smoker" value="no">
+            <br><br>
+            <label>Region:</label>
+            <select name="region">
+                <option value="northeast">Northeast</option>
+                <option value="southeast">Southeast</option>
+                <option value="northwest">Northwest</option>
+                <option value="southwest">Southwest</option>
+            </select>
+            <br><br>
+            <input type="submit" value="SUBMIT">
+            <br>
+            <h4><strong>Your insurance premium charges will be <b>{{ prediction }} /- Rs.</b> Only </strong></h4>
+        </form>
+    </div>
+</body>
+</html>
